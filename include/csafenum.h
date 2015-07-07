@@ -7,7 +7,7 @@
 
 #include <assert.h>
 
-/* declare an enum type: CSAFENAME_DECL(TypeName); */
+/* declare an enum type: CSAFENUM_DECL(TypeName); */
 #define CSAFENUM_DECL(tname) struct tname##_struct; \
     typedef const struct tname##_struct * tname; \
     const char *tname##_name(tname e) __attribute__((nonnull(1))); \
@@ -16,7 +16,7 @@
 /* declare an enum member: CSE_DECL(TypeName, MemberName); */
 #define CSE_DECL(tname, name) extern const struct tname##_struct * const name
 
-/* define an enum type: CSAFENAME_DEF(TypeName); */
+/* define an enum type: CSAFENUM_DEF(TypeName); */
 #define CSAFENUM_DEF(tname) struct tname##_struct { \
     int val; \
     const char * const name; \
