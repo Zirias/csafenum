@@ -11,8 +11,7 @@
 #define CSAFENUM_DECL(tname) struct tname##_struct; \
     typedef const struct tname##_struct * tname; \
     const char *tname##_name(tname e) __attribute__((nonnull(1))); \
-    int tname##_val(tname e) __attribute__((nonnull(1))); \
-    struct tname##_struct
+    int tname##_val(tname e) __attribute__((nonnull(1)))
 
 /* declare an enum member: CSE_DECL(TypeName, MemberName); */
 #define CSE_DECL(tname, name) extern const struct tname##_struct * const name
